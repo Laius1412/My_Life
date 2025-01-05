@@ -40,7 +40,16 @@
 
     <!-- Nội dung -->
     <div class="main">
-
+        <div class="box">
+            <div class="img-cover">
+                <img src="{{ asset('img/avatar.png') }}" alt="Ava" style="width: 100%; height: 500px; border-radius: 10px">
+            </div>
+            <div class="social">Facebook</div>
+            <div class="social">Instagram</div>
+            <div class="social">Email</div>
+            <div class="social">Zalo</div>
+            <div class="social">Github</div>
+        </div>
     </div>
 
     <!-- Script -->
