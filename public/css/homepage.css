@@ -43,8 +43,8 @@
 }
 
 .box{
-    min-height: 600px;
-    width: 350px;
+    min-height: 300px;
+    width: 450px;
     background-color: #f6f9fb;
     border-radius: 20px;
     justify-self: center;
@@ -67,6 +67,7 @@
     height: 500px;
     overflow: hidden;
     border-radius: 20px;
+    margin-bottom: 10px;
 }
 
 .box .img-cover::after{
@@ -96,3 +97,41 @@
     transform: scale(1.1); /* Phóng to ảnh 10% khi hover */
 }
 
+
+/* Định dạng thẻ a (social) */
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%; /* Chiều rộng nút */
+    padding: 15px 15px; /* Khoảng cách bên trong */
+    margin: 10px 20px 10px 20px; /* Khoảng cách giữa các nút */
+    border: 1px solid #ccc; /* Viền xám nhạt */
+    border-radius: 8px; /* Bo góc */
+    background-color: #fff; /* Nền trắng */
+    color: #333; /* Màu chữ đen */
+    text-decoration: none; /* Bỏ gạch chân */
+    font-size: 16px; /* Kích thước chữ */
+    font-weight: 500; /* Độ dày chữ */
+    transition: all 0.3s ease; /* Hiệu ứng hover mượt */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng nhẹ */
+}
+
+/* Biểu tượng Font Awesome */
+.social i {
+    margin-right: 10px; /* Khoảng cách giữa icon và chữ */
+    font-size: 20px; /* Kích thước icon */
+}
+
+/* Hiệu ứng hover */
+.social:hover {
+    color: #3dabf9; /* Chữ màu đỏ khi hover */
+    border-color: #3dabf9; /* Viền màu đỏ khi hover */
+    box-shadow: 0 4px 8px rgba(61, 161, 249, 0.3); /* Đổ bóng đậm hơn khi hover */
+    transform: translateY(-3px); /* Nút nổi lên */
+}
+
+/* Đảm bảo không bị lỗi trên trình duyệt cũ */
+.social:focus {
+    outline: none;
+}
