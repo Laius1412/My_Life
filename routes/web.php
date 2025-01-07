@@ -4,10 +4,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
-use App\Http\Controllers\MyController;
+Route::get('/todo', function () {
+    return view('todo');
+})->name('todo');
 
-Route::get('/trang-ca-nhan', [MyController::class, 'showView']);
+Route::get('/time-table', function () {
+    return view('time-table');
+})->name('time-table');
+
+Route::get('/achievement', function () {
+    return view('achievement');
+})->name('achievement');
+
+Route::get('/diary', function () {
+    return view('diary');
+})->name('diary');
+
 
 
