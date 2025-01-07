@@ -5,7 +5,7 @@
 @section('content')
 <div class="box">
     <div class="img-cover">
-        <img src="{{ asset('img/avatar.png') }}" alt="Ava" class="img-ava">
+        <img src="{{ asset('img/avatar.jpg') }}" alt="Ava" class="img-ava">
     </div>
     <a href="https://www.facebook.com/laius1108" target="_blank" class="social">
         <i class="fab fa-facebook-f"></i> Facebook
