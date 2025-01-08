@@ -1,37 +1,44 @@
 @extends('layouts.app')
 
-@section('title', 'To-Do List')
-
 @section('content')
-<div class="container mt-4">
-    <h1 class="text-center">To-Do List</h1>
-    <form action="{{ route('todo.store') }}" method="POST" class="mb-4">
+<div class="container">
+    <h1>Todo List</h1>
+
+    <!-- Form thêm công việc -->
+    <form action="{{ route('todos.store') }}" method="POST" class="mb-4">
         @csrf
         <div class="input-group">
-            <input type="text" name="task" class="form-control" placeholder="Nhập việc cần làm">
-            <button type="submit" class="btn btn-primary">Thêm</button>
+            <input type="text" name="task_name" class="form-control" placeholder="Enter task" required>
+            <input type="text" name="note" class="form-control" placeholder="Enter note">
+            <button type="submit" class="btn btn-primary">Add Task</button>
         </div>
     </form>
 
-    <table class="table table-bordered">
+    <!-- Hiển thị danh sách công việc -->
+    <table class="table border border-dark">
         <thead>
             <tr>
                 <th>#</th>
-                <th>Việc cần làm</th>
-                <th>Hành động</th>
+                <th>Task Name</th>
+                <th>Note</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($todos as $todo)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $todo->task }}</td>
+                    <td>{{ $todo->task_name }}</td>
+                    <td>{{ $todo->note }}</td>
                     <td>
-                        <a href="{{ route('todo.edit', $todo->id) }}" class="btn btn-warning btn-sm">Sửa</a>
-                        <form action="{{ route('todo.destroy', $todo->id) }}" method="POST" style="display:inline;">
+                        <!-- Nút sửa -->
+                        <a href="{{ route('todos.edit', $todo->id) }}" class="btn btn-warning btn-sm">Edit</a>
+
+                        <!-- Form xóa -->
+                        <form action="{{ route('todos.destroy', $todo->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                         </form>
                     </td>
                 </tr>
