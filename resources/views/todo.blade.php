@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Todo List')
+
 @section('content')
 <div class="container">
     <h1>Todo List</h1>
@@ -14,11 +16,12 @@
         </div>
     </form>
 
+
     <!-- Hiển thị danh sách công việc -->
     <table class="table border border-dark">
         <thead>
             <tr>
-                <th>#</th>
+                <th>STT</th>
                 <th>Task Name</th>
                 <th>Note</th>
                 <th>Actions</th>
@@ -26,13 +29,13 @@
         </thead>
         <tbody>
             @foreach ($todos as $todo)
-                <tr>
+                <tr id="todo-{{ $todo->id }}">
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $todo->task_name }}</td>
-                    <td>{{ $todo->note }}</td>
+                    <td id="task-name-{{ $todo->id }}">{{ $todo->task_name }}</td>
+                    <td id="note-{{ $todo->id }}">{{ $todo->note }}</td>
                     <td>
                         <!-- Nút sửa -->
-                        <a href="{{ route('todos.edit', $todo->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                        <button type="button" class="btn btn-warning btn-sm" onclick="editTask({{ $todo->id }})">Edit</button>
 
                         <!-- Form xóa -->
                         <form action="{{ route('todos.destroy', $todo->id) }}" method="POST" style="display:inline;">
@@ -46,4 +49,58 @@
         </tbody>
     </table>
 </div>
+
+<script>
+function editTask(id) {
+    // Lấy giá trị hiện tại từ bảng
+    const taskName = document.getElementById('task-name-' + id).innerText;
+    const note = document.getElementById('note-' + id).innerText;
+
+    // Tạo form chỉnh sửa
+    const taskNameInput = `<input type="text" name="task_name" value="${taskName}" class="form-control" required>`;
+    const noteInput = `<input type="text" name="note" value="${note}" class="form-control">`;
+
+    // Chèn form vào bảng
+    document.getElementById('task-name-' + id).innerHTML = taskNameInput;
+    document.getElementById('note-' + id).innerHTML = noteInput;
+
+    // Thêm nút lưu
+    const saveButton = `<button class="btn btn-success btn-sm" onclick="saveTask(${id})">Save</button>`;
+    document.getElementById('todo-' + id).querySelector('td:last-child').innerHTML = saveButton;
+}
+
+function saveTask(id) {
+    // Gửi form cập nhật
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = '/todos/' + id;
+
+    const csrfToken = document.createElement('input');
+    csrfToken.type = 'hidden';
+    csrfToken.name = '_token';
+    csrfToken.value = '{{ csrf_token() }}';
+    form.appendChild(csrfToken);
+
+    const method = document.createElement('input');
+    method.type = 'hidden';
+    method.name = '_method';
+    method.value = 'PUT';
+    form.appendChild(method);
+
+    const taskName = document.createElement('input');
+    taskName.type = 'hidden';
+    taskName.name = 'task_name';
+    taskName.value = document.querySelector(`[name="task_name"]`).value;
+    form.appendChild(taskName);
+
+    const note = document.createElement('input');
+    note.type = 'hidden';
+    note.name = 'note';
+    note.value = document.querySelector(`[name="note"]`).value;
+    form.appendChild(note);
+
+    document.body.appendChild(form);
+    form.submit();
+}
+</script>
 @endsection
