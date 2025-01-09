@@ -55,8 +55,6 @@ class TodoController extends Controller
     return redirect()->route('todo')->with('success', 'Task updated successfully!');
 }
 
-
-
     // Xóa todo
     public function destroy($id)
     {
