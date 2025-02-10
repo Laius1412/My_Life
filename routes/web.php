@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\DiaryController;
 
 Route::get('/todo', [TodoController::class, 'index'])->name('todo');
 
@@ -28,3 +29,6 @@ Route::get('/todos/{id}/edit', [TodoController::class, 'edit'])->name('todos.edi
 Route::put('/todos/{id}', [TodoController::class, 'update'])->name('todos.update');
 Route::delete('/todos/{id}', [TodoController::class, 'destroy'])->name('todos.destroy');
 
+Route::get('/diary', [DiaryController::class, 'index'])->name('diary');
+Route::post('/diary', [DiaryController::class, 'store'])->name('diary.store');
+Route::delete('/diary/{id}', [DiaryController::class, 'destroy'])->name('diary.destroy');
