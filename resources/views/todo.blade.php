@@ -10,9 +10,9 @@
     <form action="{{ route('todos.store') }}" method="POST" class="mb-4">
         @csrf
         <div class="input-group">
-            <input type="text" name="task_name" class="form-control" placeholder="Enter task" required>
-            <input type="text" name="note" class="form-control" placeholder="Enter note">
-            <button type="submit" class="btn btn-primary">Add Task</button>
+            <input type="text" name="task_name" class="form-control" placeholder="Nhập công việc" required>
+            <input type="text" name="note" class="form-control" placeholder="Ghi chú">
+            <button type="submit" class="btn btn-primary">Thêm</button>
         </div>
     </form>
 
@@ -22,8 +22,8 @@
         <thead>
             <tr>
                 <th>STT</th>
-                <th>Task Name</th>
-                <th>Note</th>
+                <th>Công việc</th>
+                <th>Ghi chú</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -41,7 +41,7 @@
                         <form action="{{ route('todos.destroy', $todo->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            <button type="submit" class="btn btn-danger btn-sm">Done</button>
                         </form>
                     </td>
                 </tr>
