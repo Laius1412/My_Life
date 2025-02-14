@@ -3,18 +3,16 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\DiaryController;
+use App\Http\Controllers\TimeTableController;
 
 Route::get('/todo', [TodoController::class, 'index'])->name('todo');
-
-
 
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('/time-table', function () {
-    return view('time-table');
-})->name('time-table');
+Route::get('/time-table', [TimeTableController::class, 'index'])->name('time-table');
+Route::post('/time-table', [TimeTableController::class, 'store'])->name('time-table.store');
 
 Route::get('/achievement', function () {
     return view('achievement');
