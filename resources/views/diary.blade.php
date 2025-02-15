@@ -14,15 +14,21 @@
             <h2>Nhật ký</h2>
             <div class="card p-3 shadow-sm bg-white border-primary border-2">
                 <div class="d-flex justify-content-between align-items-center">
-                    <button class="btn btn-outline-primary" onclick="changeDate(-1)">&larr;</button>
+                    <button class="btn btn-outline-primary" onclick="changeDate(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
                     <h4 id="display-date" class="text-center"></h4>
-                    <button class="btn btn-outline-primary" onclick="changeDate(1)">&rarr;</button>
+                    <button class="btn btn-outline-primary" onclick="changeDate(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
                 <form id="diary-form" action="{{ route('diary.store') }}" method="POST">
                     @csrf
                     <input type="hidden" name="date" id="selected-date">
                     <textarea name="content" id="diary-content" class="form-control mt-2" rows="5" placeholder="Hôm nay của bạn thế nào?"></textarea>
-                    <button type="submit" class="btn btn-success mt-2">Lưu</button>
+                    <button type="submit" class="btn btn-success mt-2">
+                        <i class="fas fa-save"></i> Lưu
+                    </button>
                 </form>
             </div>
         </div>
@@ -38,11 +44,15 @@
                 @foreach($diaries->sortByDesc('date') as $diary)
                     <div class="list-group-item shadow-sm bg-white p-3 mb-2 border-primary border-2">
                         <h5 class="text-primary">{{ $diary->date }}</h5>
-                        <button class="btn btn-primary btn-sm" onclick="viewDiary('{{ $diary->date }}')">Xem</button>
+                        <button class="btn btn-primary btn-sm" onclick="viewDiary('{{ $diary->date }}')">
+                            <i class="fas fa-eye"></i> Xem
+                        </button>
                         <form action="{{ route('diary.destroy', $diary->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">Xóa nhật ký</button>
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash"></i> Xóa nhật ký
+                            </button>
                         </form>
                     </div>
                 @endforeach

@@ -18,7 +18,7 @@
 
 
     <!-- Hiển thị danh sách công việc -->
-    <table class="table border border-primary border-3">
+    <table class="table border border-primary border-3" style="background-color: white;">
         <thead>
             <tr>
                 <th>STT</th>
@@ -35,13 +35,17 @@
                     <td id="note-{{ $todo->id }}">{{ $todo->note }}</td>
                     <td>
                         <!-- Nút sửa -->
-                        <button type="button" class="btn btn-warning btn-sm" onclick="editTask({{ $todo->id }})">Edit</button>
+                        <button type="button" class="btn btn-warning btn-sm" onclick="editTask({{ $todo->id }})">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
 
                         <!-- Form xóa -->
                         <form action="{{ route('todos.destroy', $todo->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">Done</button>
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                <i class="fas fa-check"></i> Done
+                            </button>
                         </form>
                     </td>
                 </tr>
