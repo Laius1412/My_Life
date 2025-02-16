@@ -5,7 +5,7 @@
     <div class="col-md-6">
         <div class="card shadow-lg border-0 rounded-4">
             <div class="card-header bg-primary text-white text-center py-3 rounded-top">
-                <h4 class="mb-0">🔒 Đăng Nhập</h4>
+                <h4 class="mb-0">Đăng Nhập</h4>
             </div>
 
             <div class="card-body p-4">
