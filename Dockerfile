@@ -2,7 +2,7 @@
 FROM php:8.2-fpm
 
 # Cài đặt các gói và extensions cần thiết
-RUN rm -rf /var/lib/apt/lists/* && apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y \
     build-essential \
     libpng-dev \
     libjpeg-dev \
@@ -17,7 +17,8 @@ RUN rm -rf /var/lib/apt/lists/* && apt-get update && apt-get install -y \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd \
-    && docker-php-ext-enable opcache
+    && docker-php-ext-enable opcache \
+    && rm -rf /var/lib/apt/lists/*  # Xóa cache APT sau khi cài đặt xong
 
 # Cài đặt Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
