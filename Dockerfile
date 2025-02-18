@@ -5,8 +5,8 @@ FROM php:8.2-fpm
 RUN apt-get update && apt-get install -y \
     build-essential \
     libpng-dev \
-    libjpeg-dev \
-    libfreetype-dev \
+    libjpeg62-turbo-dev \
+    libfreetype6-dev \
     locales \
     zip \
     jpegoptim optipng pngquant gifsicle \
@@ -16,9 +16,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd \
-    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd \
-    && docker-php-ext-enable opcache \
-    && rm -rf /var/lib/apt/lists/*  # Xóa cache APT sau khi cài đặt xong
+    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 
 # Cài đặt Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
@@ -30,8 +28,7 @@ WORKDIR /var/www
 COPY . /var/www
 
 # Thiết lập quyền truy cập cho thư mục storage và bootstrap/cache
-RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache \
-    && chmod -R 775 /var/www/storage /var/www/bootstrap/cache
+RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
 # Sao chép file entrypoint script và gán quyền thực thi
 COPY docker-entrypoint.sh /usr/local/bin/
