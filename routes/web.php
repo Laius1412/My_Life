@@ -5,6 +5,7 @@ use App\Http\Controllers\TodoController;
 use App\Http\Controllers\DiaryController;
 use App\Http\Controllers\TimeTableController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AchievementController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -15,9 +16,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/todo', [TodoController::class, 'index'])->name('todo');
     Route::get('/time-table', [TimeTableController::class, 'index'])->name('time-table');
     Route::post('/time-table', [TimeTableController::class, 'store'])->name('time-table.store');
-    Route::get('/achievement', function () {
-        return view('achievement');
-    })->name('achievement');
+    Route::get('/achievement', [AchievementController::class, 'index'])->name('achievement');
+    Route::post('/achievement', [AchievementController::class, 'store'])->name('achievement.store');
+    Route::get('/achievement/{id}/edit', [AchievementController::class, 'edit'])->name('achievement.edit');
+    Route::put('/achievement/{id}', [AchievementController::class, 'update'])->name('achievement.update');
+    Route::delete('/achievement/{id}', [AchievementController::class, 'destroy'])->name('achievement.destroy');
     Route::get('/diary', [DiaryController::class, 'index'])->name('diary');
     Route::post('/diary', [DiaryController::class, 'store'])->name('diary.store');
     Route::delete('/diary/{id}', [DiaryController::class, 'destroy'])->name('diary.destroy');

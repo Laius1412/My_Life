@@ -31,7 +31,7 @@
                         <a class="nav-link text-nav" href="{{ route('time-table') }}">Time-table</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-nav" href="{{ route('achievement') }}">Achievement</a>
+                        <a class="nav-link text-nav" href="{{ route('achievement') }}">Memories</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-nav" href="{{ route('diary') }}">Diary</a>
@@ -41,9 +41,20 @@
         </div>
     </nav>
     <div class="main">
+        <div id="loadingOverlay" style="display: none;">
+        <div class="loading-spinner"></div>
+        </div>
         @yield('content') <!-- Nội dung của từng trang con -->
     </div>
     <!-- Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Hiển thị lớp phủ loading khi bắt đầu tải trang
+            window.addEventListener("beforeunload", function() {
+                document.getElementById("loadingOverlay").style.display = "flex";
+            });
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/homepage.js"></script> <!-- Đường dẫn đến file JS -->
 </body>
