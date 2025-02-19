@@ -5,7 +5,6 @@
 ## Mô tả:
 
 - Trang web dành cho cá nhân sử dụng với các chức năng to-do list, viết nhật kí, thời gian biểu, lưu trữ thành tích, kỉ niệm.
-- 
 
 👨‍💻 Cao Mậu Thành Đạt
 
