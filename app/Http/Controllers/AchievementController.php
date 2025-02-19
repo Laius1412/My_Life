@@ -17,7 +17,7 @@ class AchievementController extends Controller
 
     public function index()
     {
-        $achievements = Achievement::all();
+        $achievements = Achievement::orderBy('event_date', 'desc')->get();
         return view('achievement', compact('achievements'));
     }
 

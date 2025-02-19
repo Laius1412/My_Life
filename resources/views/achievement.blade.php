@@ -9,7 +9,7 @@
         <div class="col-md-4">
             <div class="card shadow-sm">
                 <div class="card-header bg-primary text-white">
-                    <h4 class="card-title mb-0">Sự Kiện</h4>
+                    <h4 class="card-title mb-0">Thêm kỉ niệm</h4>
                 </div>
                 <div class="card-body">
                     @if(session('success'))
@@ -27,7 +27,7 @@
                             <input type="date" class="form-control" id="eventDate" name="event_date" value="{{ isset($achievement) ? $achievement->event_date : '' }}" required>
                         </div>
                         <div class="mb-3">
-                            <label for="eventDescription" class="form-label">Sự Kiện</label>
+                            <label for="eventDescription" class="form-label">Sự kiện</label>
                             <textarea class="form-control" id="eventDescription" name="event_description" rows="3" required>{{ isset($achievement) ? $achievement->event_description : '' }}</textarea>
                         </div>
                         <div class="mb-3">
