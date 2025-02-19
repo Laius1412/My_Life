@@ -2,21 +2,21 @@
 
 ## Tên dự án: My Life 
 
+👨‍💻 Cao Mậu Thành Đạt
+
 ## Mô tả:
 
 - Trang web dành cho cá nhân sử dụng với các chức năng to-do list, viết nhật kí, thời gian biểu, lưu trữ thành tích, kỉ niệm.
 
-👨‍💻 Cao Mậu Thành Đạt
+- Người dùng đăng ký tài khoản, vì đây là trang web cá nhân nên chỉ được 1 tài khoản duy nhất trong cơ sở dữ liệu.
+
+- Đăng nhập và sử dụng các chức năng như lên list công việc cần thực hiện, lên lịch thời gian biểu trong một tuần, viết nhật kí hàng ngày.
 
 # Chức năng
 
 ## Sơ đồ khối (Structural Diagram)
 
 ![image](https://github.com/user-attachments/assets/08ee0b6f-a547-427c-9dcf-2724e157bd48)
-
-
-## Sơ đồ thuật toán (Behavioural Diagram)
-
 
 
 # Công nghệ (Technologies)
