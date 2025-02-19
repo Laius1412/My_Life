@@ -1,6 +1,6 @@
 # Giới thiệu
 
-## Tên dự án: My 
+## Tên dự án: My Life 
 
 ## Mô tả:
 
