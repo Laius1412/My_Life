@@ -10,7 +10,11 @@
 
 - Người dùng đăng ký tài khoản, vì đây là trang web cá nhân nên chỉ được 1 tài khoản duy nhất trong cơ sở dữ liệu.
 
-- Đăng nhập và sử dụng các chức năng như lên list công việc cần thực hiện, lên lịch thời gian biểu trong một tuần, viết nhật kí hàng ngày.
+- Đăng nhập và sử dụng các chức năng như:
+  + Lên list công việc cần thực hiện
+  + Lên lịch thời gian biểu trong một tuần
+  + Viết nhật kí hàng ngày
+  + Lưu trữ thành tích, kỉ niệm
 
 # Chức năng
 
