@@ -29,7 +29,7 @@
 
 - Front-end: HTML, CSS, JS, Bootstrap, Fontawesome
 
-- Database: Aiven MySQL
+- Database: Aiven MySQL, Cloudinary 
 
 # Cài đặt (Installation)
 ```
