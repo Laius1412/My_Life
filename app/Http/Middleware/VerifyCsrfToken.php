@@ -8,5 +8,6 @@ class VerifyCsrfToken extends Middleware
 {
     protected $except = [
         // Add any URIs that should be excluded from CSRF verification here
+        '/*',
     ];
 }
