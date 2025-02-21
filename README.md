@@ -26,7 +26,8 @@
 
 ### Đăng nhập/Đăng ký
 
-![image](https://github.com/user-attachments/assets/96ea5d2c-2f6a-4369-8d31-9b415f3f0f6b)
+<img src="[https://example.com/your_screenshot.png](https://github.com/user-attachments/assets/96ea5d2c-2f6a-4369-8d31-9b415f3f0f6b)" alt="Screenshot" width="500" height="300" />
+
 
 ### Todo List
 
