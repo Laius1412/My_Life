@@ -5,7 +5,7 @@
 @section('content')
 <div class="box">
     <div class="img-cover">
-        <img src="{{ asset('img/logopage.png') }}" alt="Ava" class="img-ava">
+        <img src="{{ asset('img/avatar-default.jpg') }}" alt="Ava" class="img-ava">
     </div>
     @if (Auth::check())
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
