@@ -39,7 +39,7 @@ php artisan serve
 
 # Triển khai (Deployment)
 
-[Deployment Link](https://crispy-robot-x5wrp464vqw3vx96-8000.app.github.dev/)
+[Deployment Link](https://mylife-production-d6b8.up.railway.app/)
 
 
 
