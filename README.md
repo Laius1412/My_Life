@@ -22,7 +22,7 @@
 
 ![image](https://github.com/user-attachments/assets/08ee0b6f-a547-427c-9dcf-2724e157bd48)
 
-## 2. Sơ đồ thuật toán (Behavioral Diagram)
+## 2. Sơ đồ thuật toán (Behavioural Diagram)
 
 [Sơ đồ thuật toán](https://drive.google.com/drive/folders/1Z4Bi_6BKl7VcseFCi1AsHUSuxybk2j0i?usp=sharing)
 
