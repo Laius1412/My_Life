@@ -2,6 +2,8 @@
 
 ## 1. Tên dự án: My Life 
 
+Link repo: https://github.com/Laius1412/My_Life
+
 👨‍💻 Cao Mậu Thành Đạt
 
 ## 2. Mô tả:
